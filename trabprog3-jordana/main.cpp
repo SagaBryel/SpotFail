@@ -4,7 +4,7 @@
 using namespace std;
 
 /*
- * mudei alguma coisa
+ * mudei alguma coisa mudei denovo
  */
 int main(int argc, char** argv) {
     Assinante *a=new Assinante();//Teste ok
