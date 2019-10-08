@@ -10,14 +10,15 @@ protected:
     string nome;
     int codigo;
 public:
+    Usuario(string nome, int codigo);
+    
     int getCodigo();
     void setCodigo(int codigo);
     string getNome();
     void setNome(string nome);
     void imprimeNoArquivo();//Gabriel vai implementar
-    void carregaArquivo();//Gabriel vau implementar
-    Usuario();
-    Usuario(const Usuario& orig);
+
+    
     virtual ~Usuario();
 private:
 

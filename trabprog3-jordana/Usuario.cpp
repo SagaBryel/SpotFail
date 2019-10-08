@@ -1,5 +1,10 @@
 #include "Usuario.h"
 
+Usuario::Usuario(string nome, int codigo){
+    this->nome = nome;
+    this codigo = codigo;
+}
+
 string Usuario::getNome(){
     return nome;
 }
@@ -17,10 +22,6 @@ void Usuario::setNome(string nome){
 }
 
 void imprimeNoArquivo(){
-    
-}
-    
-void carregaArquivo(){
     
 }    
 
