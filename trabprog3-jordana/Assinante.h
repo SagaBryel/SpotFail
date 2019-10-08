@@ -14,6 +14,8 @@
 #ifndef ASSINANTE_H
 #define ASSINANTE_H
 #include"Usuario.h"
+#include<string>
+
 
 class Assinante: public Usuario {
 public:

@@ -13,6 +13,8 @@
 
 #include "Produtor.hpp"
 
+using namespace std;
+
 Produtor::Produtor() {
 }
 Produtor::Produtor(string nome, int codigo){
