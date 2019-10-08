@@ -5,6 +5,7 @@
                    displayName="Arquivos de Cabeçalho"
                    projectFiles="true">
       <itemPath>Assinante.h</itemPath>
+      <itemPath>Midia.hpp</itemPath>
       <itemPath>PlataformaDigital.h</itemPath>
       <itemPath>Produtor.hpp</itemPath>
       <itemPath>Usuario.h</itemPath>
@@ -13,6 +14,7 @@
                    displayName="Arquivos de Código-Fonte"
                    projectFiles="true">
       <itemPath>Assinante.cpp</itemPath>
+      <itemPath>Midia.cpp</itemPath>
       <itemPath>PlataformaDigital.cpp</itemPath>
       <itemPath>Produtor.cpp</itemPath>
       <itemPath>Usuario.cpp</itemPath>
@@ -47,6 +49,10 @@
       <item path="Assinante.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Assinante.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Midia.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Midia.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="PlataformaDigital.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -86,6 +92,10 @@
       <item path="Assinante.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Assinante.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Midia.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Midia.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="PlataformaDigital.cpp" ex="false" tool="1" flavor2="0">
       </item>

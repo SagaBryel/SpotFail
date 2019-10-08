@@ -36,6 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/Assinante.o \
+	${OBJECTDIR}/Midia.o \
 	${OBJECTDIR}/PlataformaDigital.o \
 	${OBJECTDIR}/Produtor.o \
 	${OBJECTDIR}/Usuario.o \
@@ -70,6 +71,11 @@ ${OBJECTDIR}/Assinante.o: Assinante.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Assinante.o Assinante.cpp
+
+${OBJECTDIR}/Midia.o: Midia.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Midia.o Midia.cpp
 
 ${OBJECTDIR}/PlataformaDigital.o: PlataformaDigital.cpp
 	${MKDIR} -p ${OBJECTDIR}
