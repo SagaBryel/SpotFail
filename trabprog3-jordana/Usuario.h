@@ -17,8 +17,6 @@ public:
     string getNome();
     void setNome(string nome);
     void imprimeNoArquivo();//Gabriel vai implementar
-
-    
     virtual ~Usuario();
 private:
 

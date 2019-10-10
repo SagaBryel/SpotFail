@@ -21,7 +21,7 @@ void PlataformaDigital::removerAssinante(Assinante* a){
     
 }
 //Midia ainda nao foi implementada
-void PlataformaDigital::inserirProduto(/*Midia* novoProduto,*/ vector<Produtor*> produtores){
+void PlataformaDigital::inserirProduto(Midia* novoProduto, vector<Produtor*> produtores){
     
 }
 

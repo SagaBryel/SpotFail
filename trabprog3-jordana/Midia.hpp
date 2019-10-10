@@ -1,7 +1,11 @@
 #ifndef MIDIA_HPP
 #define MIDIA_HPP
 
-#include "PlataformaDigital.h"
+//#include "PlataformaDigital.h"
+
+#include<string>
+
+using namespace std;
 
 //Classe abstrata
 class Midia {
