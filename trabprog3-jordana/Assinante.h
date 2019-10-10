@@ -2,9 +2,9 @@
 #define ASSINANTE_H
 #include"Usuario.h"
 #include<string>
+//using  namespace std;
 
-
-class Assinante: public Usuario {
+class Assinante : public Usuario {
 public:
     Assinante();
     Assinante(string nome, int codigo);

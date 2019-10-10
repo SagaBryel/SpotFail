@@ -1,10 +1,11 @@
 #include "Assinante.h"
 
-Assinante::Assinante() {
+Assinante::Assinante(){
+    
 }
 
-//Utilizando o construtor da superclasse
-Assinante::Assinante(string nome, int codigo) : Usuario(nome, codigo){
+//Utilizando o construtor da superclasse???
+Assinante::Assinante(string nome, int codigo)/* : Usuario(nome, codigo)*/{
     
 }
 

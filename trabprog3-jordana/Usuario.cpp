@@ -1,9 +1,13 @@
 #include "Usuario.h"
 
-Usuario::Usuario(string nome, int codigo){
-    this->nome = nome;
-    this codigo = codigo;
-}
+//Usuario::Usuario(string nome, int codigo){
+//    this->nome = nome;
+//    this codigo = codigo;
+//}
+
+//Usuario::Usuario() {
+//}
+
 
 string Usuario::getNome(){
     return nome;
@@ -24,12 +28,6 @@ void Usuario::setNome(string nome){
 void imprimeNoArquivo(){
     
 }    
-
-Usuario::Usuario() {
-}
-
-Usuario::Usuario(const Usuario& orig) {
-}
 
 Usuario::~Usuario() {
 }

@@ -5,8 +5,8 @@ using namespace std;
 Produtor::Produtor() {
 }
 
-//Utilizando o construtor da superclasse
-Produtor::Produtor(string nome, int codigo) : Usuario(nome, codigo){
+//Utilizando o construtor da superclasse???
+Produtor::Produtor(string nome, int codigo) /*: Usuario(nome, codigo)*/{
 }
 
 Produtor::~Produtor() {

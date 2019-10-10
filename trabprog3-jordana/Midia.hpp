@@ -5,7 +5,7 @@
 
 //Classe abstrata
 class Midia {
-    
+public:
     //classe interna
     class Genero {
     private:
@@ -14,6 +14,7 @@ class Midia {
     public:
         Genero();
         Genero(string nome, string sigla);
+        ~Genero();
     };//Fim da classe interna
     
 protected:
@@ -23,17 +24,18 @@ protected:
     int anolancamento;
     
     //Declaracao do atributo genero, uma classe interna
-    Genero genero;
+    Genero* genero;
+    //ssssss
     
 public:
     int qtdprodutos;
     
     Midia();
-    Midia(string nome, int codigo);
+    Midia(string nome, int codigo, Genero genero);
     
-    virtual void imprimeQtdProdutos();
-    virtual void imprimeProduto();
-    virtual void imprimeNoArquivo();
+    virtual void imprimeQtdProdutos() = 0;
+    virtual void imprimeProduto() = 0;
+    virtual void imprimeNoArquivo() = 0;
     virtual ~Midia();
 private:
     

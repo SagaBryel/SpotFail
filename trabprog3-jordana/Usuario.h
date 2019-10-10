@@ -10,7 +10,7 @@ protected:
     string nome;
     int codigo;
 public:
-    Usuario(string nome, int codigo);
+    //Usuario(string nome, int codigo);
     
     int getCodigo();
     void setCodigo(int codigo);
