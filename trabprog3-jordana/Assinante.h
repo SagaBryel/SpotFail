@@ -2,7 +2,7 @@
 #define ASSINANTE_H
 #include"Usuario.h"
 #include<string>
-//using  namespace std;
+using  namespace std;
 
 class Assinante : public Usuario {
 public:

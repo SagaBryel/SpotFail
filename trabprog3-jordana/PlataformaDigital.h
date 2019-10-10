@@ -18,7 +18,6 @@ public:
     void imprimeAssinantes();
     void inserirAssinante(Assinante* a);
     void removerAssinante(Assinante* a);
-    //Midia ainda nao foi implementada
     void inserirProduto(Midia* novoProduto, vector<Produtor*> produtores);
     void imprimeNoArquivo();
     void carregaArquivoUsuarios();

@@ -6,6 +6,8 @@ Assinante::Assinante(){
 
 //Utilizando o construtor da superclasse???
 Assinante::Assinante(string nome, int codigo)/* : Usuario(nome, codigo)*/{
+    this->nome=nome;
+    this->codigo=codigo;
     
 }
 
