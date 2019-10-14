@@ -18,6 +18,6 @@ void Produtor::imprimeProdutosDesenvolvidos(){
      
 }
  
-void Produtor::imprimeNoArquivo(/*&outfile : ofstream*/){
-     
-}
+//void Produtor::imprimeNoArquivo(ofstream saida){
+//     
+//}

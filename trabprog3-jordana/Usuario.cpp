@@ -8,6 +8,9 @@
 //Usuario::Usuario() {
 //}
 
+Usuario::Usuario(){
+    
+}
 
 string Usuario::getNome(){
     return nome;
@@ -25,7 +28,7 @@ void Usuario::setNome(string nome){
     this->nome=nome;
 }
 
-void imprimeNoArquivo(){
+void imprimeNoArquivo(ofstream saida){
     
 }    
 

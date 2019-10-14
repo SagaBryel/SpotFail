@@ -19,7 +19,7 @@ public:
     void inserirAssinante(Assinante* a);
     void removerAssinante(Assinante* a);
     void inserirProduto(Midia* novoProduto, vector<Produtor*> produtores);
-    void imprimeNoArquivo();
+    void imprimeNoArquivo(ofstream saida);
     void carregaArquivoUsuarios();
     void carregaArquivoGeneros();
     void carregaArquivosMidias();

@@ -2,8 +2,10 @@
 
 Midia::Midia() {
 }
-Midia::Midia(string nome, int codigo, Genero genero) {
-    
+Midia::Midia(string nome, int codigo, Genero* genero) {
+    this->nome=nome;
+    this->codigo=codigo;
+    this->genero=genero;
 }
 
 Midia::~Midia() {

@@ -25,7 +25,7 @@ protected:
     string nome;
     int codigo;
     int duracao;
-    int anolancamento;
+    int anoLancamento;
     
     //Declaracao do atributo genero, uma classe interna
     Genero* genero;
@@ -35,7 +35,7 @@ public:
     int qtdprodutos;
     
     Midia();
-    Midia(string nome, int codigo, Genero genero);
+    Midia(string nome, int codigo, Genero* genero);
     
     virtual void imprimeQtdProdutos() = 0;
     virtual void imprimeProduto() = 0;

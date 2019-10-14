@@ -1,6 +1,7 @@
 #ifndef PRODUTOR_HPP
 #define PRODUTOR_HPP
 #include "Usuario.h"
+#include<fstream>
 #include<vector>
 
 using namespace std;
@@ -13,7 +14,7 @@ public:
     void imprimeProdutosDesenvolvidos();
     //vector </*Midia*/> getProdutosDesenvolvidos();
     virtual ~Produtor();
-    void imprimeNoArquivo(/*&outfile : ofstream*/);
+//    void imprimeNoArquivo(ofstream saida);
 private:
 
 };

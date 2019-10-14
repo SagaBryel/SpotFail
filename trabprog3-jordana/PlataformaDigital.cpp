@@ -25,7 +25,7 @@ void PlataformaDigital::inserirProduto(Midia* novoProduto, vector<Produtor*> pro
     
 }
 
-void PlataformaDigital::imprimeNoArquivo(){
+void PlataformaDigital::imprimeNoArquivo(ofstream saida){
     
 }
 
