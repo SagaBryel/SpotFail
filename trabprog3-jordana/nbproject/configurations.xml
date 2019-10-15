@@ -4,18 +4,24 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Arquivos de Cabeçalho"
                    projectFiles="true">
+      <itemPath>Artista.hpp</itemPath>
       <itemPath>Assinante.h</itemPath>
       <itemPath>Midia.hpp</itemPath>
+      <itemPath>Musica.hpp</itemPath>
       <itemPath>PlataformaDigital.h</itemPath>
+      <itemPath>Poadcaster.hpp</itemPath>
       <itemPath>Produtor.hpp</itemPath>
       <itemPath>Usuario.h</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Arquivos de Código-Fonte"
                    projectFiles="true">
+      <itemPath>Artista.cpp</itemPath>
       <itemPath>Assinante.cpp</itemPath>
       <itemPath>Midia.cpp</itemPath>
+      <itemPath>Musica.cpp</itemPath>
       <itemPath>PlataformaDigital.cpp</itemPath>
+      <itemPath>Poadcaster.cpp</itemPath>
       <itemPath>Produtor.cpp</itemPath>
       <itemPath>Usuario.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
@@ -46,6 +52,10 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="Artista.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Artista.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Assinante.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Assinante.h" ex="false" tool="3" flavor2="0">
@@ -54,9 +64,17 @@
       </item>
       <item path="Midia.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Musica.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Musica.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="PlataformaDigital.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="PlataformaDigital.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Poadcaster.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Poadcaster.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Produtor.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -89,6 +107,10 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="Artista.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Artista.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Assinante.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Assinante.h" ex="false" tool="3" flavor2="0">
@@ -97,9 +119,17 @@
       </item>
       <item path="Midia.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Musica.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Musica.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="PlataformaDigital.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="PlataformaDigital.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Poadcaster.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Poadcaster.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Produtor.cpp" ex="false" tool="1" flavor2="0">
       </item>
