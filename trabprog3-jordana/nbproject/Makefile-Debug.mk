@@ -35,11 +35,13 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/Album.o \
 	${OBJECTDIR}/Artista.o \
 	${OBJECTDIR}/Assinante.o \
 	${OBJECTDIR}/Midia.o \
 	${OBJECTDIR}/Musica.o \
 	${OBJECTDIR}/PlataformaDigital.o \
+	${OBJECTDIR}/Poadcast.o \
 	${OBJECTDIR}/Poadcaster.o \
 	${OBJECTDIR}/Produtor.o \
 	${OBJECTDIR}/Usuario.o \
@@ -70,6 +72,11 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/trabprog3-jordana: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/trabprog3-jordana ${OBJECTFILES} ${LDLIBSOPTIONS}
 
+${OBJECTDIR}/Album.o: Album.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Album.o Album.cpp
+
 ${OBJECTDIR}/Artista.o: Artista.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -94,6 +101,11 @@ ${OBJECTDIR}/PlataformaDigital.o: PlataformaDigital.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PlataformaDigital.o PlataformaDigital.cpp
+
+${OBJECTDIR}/Poadcast.o: Poadcast.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Poadcast.o Poadcast.cpp
 
 ${OBJECTDIR}/Poadcaster.o: Poadcaster.cpp
 	${MKDIR} -p ${OBJECTDIR}
