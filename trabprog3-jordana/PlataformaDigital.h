@@ -8,9 +8,9 @@
 #include <iostream>
 #include <fstream>
 #include <stdlib.h>
-#include "NumPunctPTBR.h"
-#include "Tokenizer.h"
-#include "NumberUtils.h"
+#include "util/NumPunctPTBR.h"
+#include "util/Tokenizer.h"
+#include "util/NumberUtils.h"
 using namespace std;
 using namespace cpp_util;
 class PlataformaDigital {

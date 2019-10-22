@@ -41,7 +41,7 @@ void PlataformaDigital::carregaArquivoUsuarios(ifstream entrada){
         getline(entrada, linha);
         Tokenizer tok(linha, ';');
         tokens = tok.remaining();
-
+//aaaaaaaaa
         codigo = (int)parseDouble(tokens[0], LOCALE_PT_BR);
         cout << codigo;
         
