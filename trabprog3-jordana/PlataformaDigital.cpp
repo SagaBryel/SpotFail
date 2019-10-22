@@ -1,6 +1,7 @@
 #include "PlataformaDigital.h"
 
 using namespace std;
+using namespace cpp_util;
 
 PlataformaDigital::PlataformaDigital() {
 }
@@ -29,8 +30,34 @@ void PlataformaDigital::imprimeNoArquivo(ofstream saida){
     
 }
 
-void PlataformaDigital::carregaArquivoUsuarios(){
+void PlataformaDigital::carregaArquivoUsuarios(ifstream entrada){
+    string linha;
+    int codigo;
+    vector<string> tokens;
+    //consumir a primeira linha, que e apenas um cabecalho
+    getline(entrada, linha);
     
+    while(! entrada.eof()){
+        getline(entrada, linha);
+        Tokenizer tok(linha, ';');
+        tokens = tok.remaining();
+
+        codigo = (int)parseDouble(tokens[0], LOCALE_PT_BR);
+        cout << codigo;
+        
+        
+        if(tokens[1] == "U"){
+            Assinante *novo = new Assinante(tokens[2], codigo);
+            //assinantes.push_back(novo);
+        }
+        else if (tokens[1] == "P"){
+            //cria um podcaster
+        }
+        else{
+            //cria um musico
+        }
+        
+    }
 }
 
 void PlataformaDigital::carregaArquivoGeneros(){
