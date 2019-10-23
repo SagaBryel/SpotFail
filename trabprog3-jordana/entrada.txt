@@ -1,0 +1,2 @@
+codigo;tipo;nome
+1;U;Joelbson AAAAAH
