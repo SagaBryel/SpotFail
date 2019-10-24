@@ -16,6 +16,9 @@ int main(int argc, char** argv) {
     PlataformaDigital* b = new PlataformaDigital("OI");
     b->carregaArquivoUsuarios(arq);
    
+    
+    
+    arq.close();
     return 0;
 }
 

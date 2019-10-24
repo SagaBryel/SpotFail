@@ -44,17 +44,17 @@ void PlataformaDigital::carregaArquivoUsuarios(ifstream &entrada){
 
         codigo = (int)parseDouble(tokens[0], LOCALE_PT_BR);      
         
-        if(tokens[1] == "U"){
+        if((tokens[1] == "U") && (!entrada.eof())){
             Assinante *novo = new Assinante(tokens[2], codigo);
             assinantes.push_back(*novo);
             //cout << "U  ";
         }
-        else if (tokens[1] == "A"){
+        else if ((tokens[1] == "A") && (!entrada.eof())){
             Artista *novo2 = new Artista(tokens[2], codigo);
             artistas.push_back(*novo2);
             //cout << "A ";
         }
-        else{
+        else if((tokens[1] == "P") && (!entrada.eof())){
             Poadcaster *novo3 = new Poadcaster(tokens[2], codigo);
             poadcasters.push_back(*novo3);
             //cout << "P ";
@@ -62,17 +62,20 @@ void PlataformaDigital::carregaArquivoUsuarios(ifstream &entrada){
     }
     vector<Assinante>::iterator iteAss;
     for(iteAss = assinantes.begin(); iteAss < assinantes.end(); iteAss++){
-        cout << "U " << iteAss.base()->getNome() << endl;
+        cout << "U;";
+        iteAss.base()->printaUsuario();
     }
     
     vector<Artista>::iterator iteArt;
     for(iteArt = artistas.begin(); iteArt < artistas.end(); iteArt++){
-        cout << "A " << iteArt.base()->getNome() << endl;
+        cout << "A;";
+        iteArt.base()->printaUsuario();
     }
     
     vector<Poadcaster>::iterator itePod;
     for(itePod = poadcasters.begin(); itePod < poadcasters.end(); itePod++){
-        cout << "P " << itePod.base()->getNome() << endl;
+        cout << "P;";
+        itePod.base()->printaUsuario();
     }
 }
 
