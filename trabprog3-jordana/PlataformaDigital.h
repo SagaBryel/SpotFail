@@ -12,9 +12,9 @@
 #include "NumPunctPTBR.hpp"
 #include "NumberUtils.hpp"
 #include "Artista.hpp"
-#include "Poadcaster.hpp"
+#include "Podcaster.hpp"
 #include "Musica.hpp"
-#include "Poadcast.hpp"
+#include "Podcast.hpp"
 #include<iterator>
 using namespace std;
 
@@ -23,13 +23,13 @@ protected:
     string nome;
     
     vector<Assinante> assinantes;
-    vector<Poadcaster> poadcasters;
+    vector<Podcaster> podcasters;
     vector<Artista> artistas;
     
     vector<Midia::Genero> generos;
     
     vector<Musica> musicas;
-    vector<Poadcast> poadcasts;
+    vector<Podcast> podcasts;
     
 public:
     PlataformaDigital();

@@ -51,8 +51,8 @@ void PlataformaDigital::carregaArquivoUsuarios(ifstream &entrada){
             artistas.push_back(*novo2);
         }
         else if(tokens[1]== "P"  && !entrada.eof()){//preenchimento do vector
-            Poadcaster *novo3 = new Poadcaster(tokens[2], codigo);
-            poadcasters.push_back(*novo3);
+            Podcaster *novo3 = new Podcaster(tokens[2], codigo);
+            podcasters.push_back(*novo3);
         }        
     }
     //TESTES 
@@ -103,43 +103,61 @@ void PlataformaDigital::carregaArquivoGeneros(ifstream &entrada){
 void PlataformaDigital::carregaArquivosMidias(ifstream &entrada){
     string linha;
     vector<string> tokens;
+    //vector auxiliar para tratar os casos da musicas com mais de um genero
+    vector<string> tokauxes;
     
     //consumir a primeira linha, que e apenas um cabecalho
     getline(entrada, linha);
     
-    int auxCodigo;
-    int auxAno;
+    int auxcodigo;
+    int auxano;
     double auxDuracao;
-    
+
     
     while(!entrada.eof()){
         getline(entrada, linha);
         Tokenizer tok(linha, ';');
         tokens = tok.remaining(); 
         
-        Midia::Genero* aux;
+        Midia::Genero* auxgen;
         vector<Midia::Genero>::iterator iteGenero;
+        
+        //Há musicas com dois generos, um tokenizer para pegar o primeiro
         for(iteGenero = generos.begin(); iteGenero < generos.end(); iteGenero++){
-            if(iteGenero.base()->getSigla()==tokens[5]) aux=iteGenero.base();
+            Tokenizer tokaux(tokens[5], ',');
+            tokauxes = tokaux.remaining();
+            if(iteGenero.base()->getSigla() == tokauxes[0]){
+                auxgen = iteGenero.base();
+                break;
+            }
+            cout << tokauxes[0];
         }
         
+        //campos comuns a musica e podcast
+        auxcodigo = (int)parseDouble(tokens[0], LOCALE_PT_BR);
+        auxDuracao = parseDouble(tokens[4],LOCALE_PT_BR);
+        auxano = (int)parseDouble(tokens[9],LOCALE_PT_BR);
         
+        //Ainda precisa ser verificado como tratar a informação album
         if(tokens[2] == "M" && !entrada.eof()){//preenchimento do vector
-            auxCodigo=(int)parseDouble(tokens[0], LOCALE_PT_BR);
-            auxDuracao=parseDouble(tokens[4],LOCALE_PT_BR);
-            auxAno=(int)parseDouble(tokens[9],LOCALE_PT_BR);            
-            Musica *novo = new Musica(tokens[1],auxCodigo,aux,auxDuracao,auxAno);
-            musicas.push_back(*novo);
+            Musica *novom = new Musica(tokens[1], auxcodigo, auxgen, auxDuracao, auxano);
+            musicas.push_back(*novom);
         }
-        /*else if (tokens[2] == "P" && !entrada.eof()){//preenchimento do vector
-            Poadcast *novo2 = new Artista(tokens[2], codigo);
-            poadcasts.push_back(*novo2);
-        } */
+        
+        if(tokens[2] == "P" && !entrada.eof()){
+            Podcast *novop = new Podcast(tokens[1], auxcodigo, auxgen, auxano);
+            podcasts.push_back(*novop);
+        }
     }
-    vector<Musica>::iterator iteMusica;
-    for(iteMusica = musicas.begin(); iteMusica < musicas.end(); iteMusica++){
-        cout << iteMusica.base()->getNome() << endl;
-    } 
+//Trecho de codigo, com impressoes para conferencia  
+//    vector<Musica>::iterator iteMusica;
+//    for(iteMusica = musicas.begin(); iteMusica < musicas.end(); iteMusica++){
+//        cout << iteMusica.base()->getNome() << endl;
+//    }
+//    vector<Podcast>::iterator itePod;
+//    for(itePod = podcasts.begin(); itePod < podcasts.end(); itePod++){
+//        cout << itePod.base()->getNome() << endl;
+//    } 
 }
 
 void PlataformaDigital::exportarBiblioteca(){

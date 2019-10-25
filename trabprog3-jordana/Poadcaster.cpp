@@ -11,14 +11,14 @@
  * Created on 14 de Outubro de 2019, 19:32
  */
 
-#include "Poadcaster.hpp"
+#include "Podcaster.hpp"
 
-Poadcaster::Poadcaster(string nome, int codigo) : Produtor(nome,codigo){
+Podcaster::Podcaster(string nome, int codigo) : Produtor(nome,codigo){
     this->nome;
     this->codigo;
 }   
 
-string Poadcaster::getNome(){
+string Podcaster::getNome(){
     return this->nome;
 }
 //funcao ja esxiste na classe pai    
@@ -27,6 +27,6 @@ string Poadcaster::getNome(){
 //    
 //}
 
-Poadcaster::~Poadcaster(){
+Podcaster::~Podcaster(){
 }
 

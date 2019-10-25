@@ -3,9 +3,9 @@
 Midia::Midia() {
 }
 Midia::Midia(string nome, int codigo, Genero* genero) {
-    this->nome=nome;
-    this->codigo=codigo;
-    this->genero=genero;
+    this->nome = nome;
+    this->codigo = codigo;
+    this->genero = genero;
 }
 
 Midia::~Midia() {

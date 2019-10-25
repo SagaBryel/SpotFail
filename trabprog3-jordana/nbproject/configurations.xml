@@ -12,8 +12,8 @@
       <itemPath>NumPunctPTBR.hpp</itemPath>
       <itemPath>NumberUtils.hpp</itemPath>
       <itemPath>PlataformaDigital.h</itemPath>
-      <itemPath>Poadcast.hpp</itemPath>
-      <itemPath>Poadcaster.hpp</itemPath>
+      <itemPath>Podcast.hpp</itemPath>
+      <itemPath>Podcaster.hpp</itemPath>
       <itemPath>Produtor.hpp</itemPath>
       <itemPath>Tokenizer.hpp</itemPath>
       <itemPath>Usuario.h</itemPath>
@@ -96,11 +96,11 @@
       </item>
       <item path="Poadcast.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="Poadcast.hpp" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="Poadcaster.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="Poadcaster.hpp" ex="false" tool="3" flavor2="0">
+      <item path="Podcast.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Podcaster.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Produtor.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -171,11 +171,11 @@
       </item>
       <item path="Poadcast.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="Poadcast.hpp" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="Poadcaster.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="Poadcaster.hpp" ex="false" tool="3" flavor2="0">
+      <item path="Podcast.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Podcaster.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Produtor.cpp" ex="false" tool="1" flavor2="0">
       </item>

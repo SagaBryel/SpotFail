@@ -11,22 +11,22 @@
  * Created on 14 de Outubro de 2019, 19:31
  */
 
-#ifndef POADCASTER_HPP
-#define POADCASTER_HPP
+#ifndef PODCASTER_HPP
+#define PODCASTER_HPP
 
 #include"Produtor.hpp"
 
 using namespace std;
 
-class Poadcaster : public Produtor {
+class Podcaster : public Produtor {
 public:
-    Poadcaster(string nome, int codigo);
+    Podcaster(string nome, int codigo);
     string getNome();
 //    void imprimeNoArquivo(ofstream saida);
-    ~Poadcaster();
+    ~Podcaster();
 private:
 
 };
 
-#endif /* POADCASTER_HPP */
+#endif /* PODCASTER_HPP */
 

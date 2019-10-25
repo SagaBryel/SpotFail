@@ -5,27 +5,31 @@
  */
 
 /* 
- * File:   PoadCast.cpp
+ * File:   PodCast.cpp
  * Author: 2017101996
  * 
  * Created on 15 de Outubro de 2019, 17:07
  */
 
-#include "Poadcast.hpp"
+#include "Podcast.hpp"
 
-Poadcast::Poadcast(){
+Podcast::Podcast(){
     
 }
     
-Poadcast::Poadcast(string nome, Genero* gen,int qtdTemp) : Midia(nome, codigo, genero){
+Podcast::Podcast(string nome, int codigo, Genero* gen, int qtdTemp) : Midia(nome, codigo, genero){
     this->qtdTemporadas=qtdTemp;
 }
 
-void Poadcast::imprimeInfoProduto(){
+string Podcast::getNome(){
+    return this->nome;
+}
+
+void Podcast::imprimeInfoProduto(){
     
 }
 
-Poadcast::~Poadcast(){
+Podcast::~Podcast(){
     
 }
 
