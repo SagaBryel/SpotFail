@@ -8,17 +8,18 @@
 using namespace std;
 
 int main(int argc, char** argv) {
-    ifstream arq;
-    arq.open("usuarios.csv");
-    Produtor *a=new Produtor("ESTAMOS QUASE CHEGANDO, NAO DESISTA ",404);//Teste ok
-    cout << a->getNome();
-    cout << a->getCodigo();
+    ifstream arqUsuarios;
+    ifstream arqGenero;
+    ifstream arqMidias;
+    arqUsuarios.open("usuarios.csv");
+    arqGenero.open("generos.csv");
+    arqMidias.open("midias_corrigidas.csv");
+    
     PlataformaDigital* b = new PlataformaDigital("OI");
-    b->carregaArquivoUsuarios(arq);
+    b->carregaArquivoUsuarios(arqUsuarios);
+    b->carregaArquivoGeneros(arqGenero);
+    b->carregaArquivosMidias(arqMidias);
    
-    
-    
-    arq.close();
     return 0;
 }
 

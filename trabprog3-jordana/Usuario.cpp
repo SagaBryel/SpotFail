@@ -1,5 +1,5 @@
 #include "Usuario.h"
-using namespace std;
+
 //Usuario::Usuario(string nome, int codigo){
 //    this->nome = nome;
 //    this codigo = codigo;
@@ -26,21 +26,11 @@ void Usuario::setCodigo(int codigo){
 
 void Usuario::setNome(string nome){
     this->nome=nome;
-}   
-
-void Usuario::imprimeNoArquivo(ofstream saida){
-    
 }
 
-void Usuario::printaUsuario(){
-    //cout << nome << endl;
-//    printf("%s; %d\n", nome.c_str(), codigo);
+void imprimeNoArquivo(ofstream saida){
     
-    
-    cout << codigo << ";";
-    cout << nome << endl;
-    cout << endl;
-}
+}    
 
 Usuario::~Usuario() {
 }

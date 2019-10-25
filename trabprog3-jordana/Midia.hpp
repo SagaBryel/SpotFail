@@ -4,6 +4,7 @@
 //#include "PlataformaDigital.h"
 
 #include<string>
+#include<iostream>
 
 using namespace std;
 
@@ -18,6 +19,8 @@ public:
     public:
         Genero();
         Genero(string nome, string sigla);
+        string getNome();
+        string getSigla();
         ~Genero();
     };//Fim da classe interna
     
@@ -37,9 +40,9 @@ public:
     Midia();
     Midia(string nome, int codigo, Genero* genero);
     
-    virtual void imprimeQtdProdutos() = 0;
-    virtual void imprimeProduto() = 0;
-    virtual void imprimeNoArquivo() = 0;
+//    virtual void imprimeQtdProdutos() = 0;
+//    virtual void imprimeProduto() = 0;
+//    virtual void imprimeNoArquivo() = 0;
     virtual ~Midia();
 private:
     

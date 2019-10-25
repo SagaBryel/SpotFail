@@ -13,9 +13,11 @@
 #include "NumberUtils.hpp"
 #include "Artista.hpp"
 #include "Poadcaster.hpp"
+#include "Musica.hpp"
+#include "Poadcast.hpp"
 #include<iterator>
 using namespace std;
-//using namespace cpp_util;
+
 class PlataformaDigital {
 protected:
     string nome;
@@ -23,6 +25,11 @@ protected:
     vector<Assinante> assinantes;
     vector<Poadcaster> poadcasters;
     vector<Artista> artistas;
+    
+    vector<Midia::Genero> generos;
+    
+    vector<Musica> musicas;
+    vector<Poadcast> poadcasts;
     
 public:
     PlataformaDigital();
@@ -34,8 +41,8 @@ public:
     void inserirProduto(Midia* novoProduto, vector<Produtor*> produtores);
     void imprimeNoArquivo(ofstream saida);
     void carregaArquivoUsuarios(ifstream &entrada);
-    void carregaArquivoGeneros();
-    void carregaArquivosMidias();
+    void carregaArquivoGeneros(ifstream &entrada);
+    void carregaArquivosMidias(ifstream &entrada);
     void exportarBiblioteca();
     void gerarRelatorios();
     void carregaArquivosFavoritos();

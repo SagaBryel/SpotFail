@@ -5,7 +5,8 @@
 class Musica : public Midia {
 public:
     Musica();
-    Musica(string nome, Genero* gen, float duracao, int ano);
+    Musica(string nome,int codigo, Genero* gen, float duracao, int ano);
+    string getNome();
     void imprimeInfoProduto();
     ~Musica();
 private:

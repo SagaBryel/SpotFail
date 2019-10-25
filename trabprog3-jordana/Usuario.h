@@ -19,7 +19,6 @@ public:
     void setNome(string nome);
     void imprimeNoArquivo(ofstream saida);//Gabriel vai implementar
     virtual ~Usuario();
-    void printaUsuario();
 private:
 
 };
