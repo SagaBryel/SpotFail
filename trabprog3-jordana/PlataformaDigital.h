@@ -11,6 +11,7 @@
 #include"Tokenizer.hpp"
 #include "NumPunctPTBR.hpp"
 #include "NumberUtils.hpp"
+#include "StringUtils.hpp"
 #include "Artista.hpp"
 #include "Podcaster.hpp"
 #include "Musica.hpp"
@@ -23,13 +24,13 @@ protected:
     string nome;
     
     vector<Assinante> assinantes;
-    vector<Podcaster> podcasters;
-    vector<Artista> artistas;
+    //mudar podcasters e artistas para uma
+    vector<Produtor> produtores;
     
     vector<Midia::Genero> generos;
     
-    vector<Musica> musicas;
-    vector<Podcast> podcasts;
+    vector<Midia> midias;
+    
     
 public:
     PlataformaDigital();

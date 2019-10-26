@@ -15,6 +15,7 @@
       <itemPath>Podcast.hpp</itemPath>
       <itemPath>Podcaster.hpp</itemPath>
       <itemPath>Produtor.hpp</itemPath>
+      <itemPath>StringUtils.hpp</itemPath>
       <itemPath>Tokenizer.hpp</itemPath>
       <itemPath>Usuario.h</itemPath>
     </logicalFolder>
@@ -29,9 +30,10 @@
       <itemPath>NumPunctPTBR.cpp</itemPath>
       <itemPath>NumberUtils.cpp</itemPath>
       <itemPath>PlataformaDigital.cpp</itemPath>
-      <itemPath>Poadcast.cpp</itemPath>
-      <itemPath>Poadcaster.cpp</itemPath>
+      <itemPath>Podcast.cpp</itemPath>
+      <itemPath>Podcaster.cpp</itemPath>
       <itemPath>Produtor.cpp</itemPath>
+      <itemPath>StringUtils.cpp</itemPath>
       <itemPath>Tokenizer.cpp</itemPath>
       <itemPath>Usuario.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
@@ -94,17 +96,21 @@
       </item>
       <item path="PlataformaDigital.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Poadcast.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Poadcaster.cpp" ex="false" tool="1" flavor2="0">
+      <item path="Podcast.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Podcast.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Podcaster.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Podcaster.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Produtor.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Produtor.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="StringUtils.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="StringUtils.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Tokenizer.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -169,17 +175,21 @@
       </item>
       <item path="PlataformaDigital.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Poadcast.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Poadcaster.cpp" ex="false" tool="1" flavor2="0">
+      <item path="Podcast.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Podcast.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Podcaster.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Podcaster.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Produtor.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Produtor.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="StringUtils.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="StringUtils.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Tokenizer.cpp" ex="false" tool="1" flavor2="0">
       </item>

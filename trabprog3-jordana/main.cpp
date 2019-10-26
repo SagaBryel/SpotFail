@@ -19,7 +19,7 @@ int main(int argc, char** argv) {
     b->carregaArquivoUsuarios(arqUsuarios);
     b->carregaArquivoGeneros(arqGenero);
     b->carregaArquivosMidias(arqMidias);
-   
+    b->imprimeProdutos("Rock");
     return 0;
 }
 

@@ -9,7 +9,15 @@ PlataformaDigital::PlataformaDigital(string nome){
     this->nome=nome;
 }
 void PlataformaDigital::imprimeProdutos(string genero){
-        
+    string midgen;
+    vector<Midia>::iterator iteMid;
+
+    for(iteMid = midias.begin(); iteMid < midias.end(); iteMid++){
+        midgen = iteMid.base()->getGenero().getNome();
+        if(stringCompare(midgen, genero)){
+            cout << iteMid.base()->getGenero().getNome() << endl;
+        }
+    }
 }
 void PlataformaDigital::imprimeAssinantes(){
     
@@ -22,7 +30,7 @@ void PlataformaDigital::removerAssinante(Assinante* a){
 }
 
 void PlataformaDigital::inserirProduto(Midia* novoProduto, vector<Produtor*> produtores){
-    
+   
 }
 
 void PlataformaDigital::imprimeNoArquivo(ofstream saida){
@@ -48,11 +56,11 @@ void PlataformaDigital::carregaArquivoUsuarios(ifstream &entrada){
         }
         else if (tokens[1] == "A" && !entrada.eof()){//preenchimento do vector
             Artista *novo2 = new Artista(tokens[2], codigo);
-            artistas.push_back(*novo2);
+            produtores.push_back(*novo2);
         }
         else if(tokens[1]== "P"  && !entrada.eof()){//preenchimento do vector
             Podcaster *novo3 = new Podcaster(tokens[2], codigo);
-            podcasters.push_back(*novo3);
+            produtores.push_back(*novo3);
         }        
     }
     //TESTES 
@@ -100,6 +108,8 @@ void PlataformaDigital::carregaArquivoGeneros(ifstream &entrada){
     
 }
 
+
+//ainda falta lidar com Albuns
 void PlataformaDigital::carregaArquivosMidias(ifstream &entrada){
     string linha;
     vector<string> tokens;
@@ -130,7 +140,6 @@ void PlataformaDigital::carregaArquivosMidias(ifstream &entrada){
                 auxgen = iteGenero.base();
                 break;
             }
-            cout << tokauxes[0];
         }
         
         //campos comuns a musica e podcast
@@ -141,15 +150,15 @@ void PlataformaDigital::carregaArquivosMidias(ifstream &entrada){
         //Ainda precisa ser verificado como tratar a informação album
         if(tokens[2] == "M" && !entrada.eof()){//preenchimento do vector
             Musica *novom = new Musica(tokens[1], auxcodigo, auxgen, auxDuracao, auxano);
-            musicas.push_back(*novom);
+            midias.push_back(*novom);
         }
         
         if(tokens[2] == "P" && !entrada.eof()){
             Podcast *novop = new Podcast(tokens[1], auxcodigo, auxgen, auxano);
-            podcasts.push_back(*novop);
+            midias.push_back(*novop);
         }
     }
-//Trecho de codigo, com impressoes para conferencia  
+//TESTES
 //    vector<Musica>::iterator iteMusica;
 //    for(iteMusica = musicas.begin(); iteMusica < musicas.end(); iteMusica++){
 //        cout << iteMusica.base()->getNome() << endl;
@@ -172,7 +181,6 @@ void PlataformaDigital::carregaArquivosFavoritos(){
     
 }
     
-
 PlataformaDigital::~PlataformaDigital() {
 }
 

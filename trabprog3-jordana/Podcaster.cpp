@@ -21,11 +21,6 @@ Podcaster::Podcaster(string nome, int codigo) : Produtor(nome,codigo){
 string Podcaster::getNome(){
     return this->nome;
 }
-//funcao ja esxiste na classe pai    
-    
-//void Poadcaster::imprimeNoArquivo(ofstream saida){
-//    
-//}
 
 Podcaster::~Podcaster(){
 }

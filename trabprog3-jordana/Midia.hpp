@@ -35,10 +35,12 @@ protected:
     //ssssss
     
 public:
-    int qtdprodutos;
+    static int qtdprodutos;
     
     Midia();
     Midia(string nome, int codigo, Genero* genero);
+    string getNome();
+    Genero getGenero();
     
 //    virtual void imprimeQtdProdutos() = 0;
 //    virtual void imprimeProduto() = 0;

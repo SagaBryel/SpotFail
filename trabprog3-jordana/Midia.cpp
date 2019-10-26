@@ -1,11 +1,14 @@
 #include "Midia.hpp"
 
+int Midia::qtdprodutos = 0;
+
 Midia::Midia() {
 }
 Midia::Midia(string nome, int codigo, Genero* genero) {
     this->nome = nome;
     this->codigo = codigo;
     this->genero = genero;
+    qtdprodutos++;
 }
 
 Midia::~Midia() {
@@ -25,8 +28,16 @@ string Midia::Genero::getSigla(){
     return sigla;
 }
 
+string Midia::getNome(){
+    return this->nome;
+}
+
 Midia::Genero::Genero(){
     
+}
+
+Midia::Genero Midia::getGenero(){
+    return *genero;
 }
 
 Midia::Genero::~Genero(){

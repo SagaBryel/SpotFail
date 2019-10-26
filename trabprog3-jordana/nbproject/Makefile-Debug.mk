@@ -43,9 +43,10 @@ OBJECTFILES= \
 	${OBJECTDIR}/NumPunctPTBR.o \
 	${OBJECTDIR}/NumberUtils.o \
 	${OBJECTDIR}/PlataformaDigital.o \
-	${OBJECTDIR}/Poadcast.o \
-	${OBJECTDIR}/Poadcaster.o \
+	${OBJECTDIR}/Podcast.o \
+	${OBJECTDIR}/Podcaster.o \
 	${OBJECTDIR}/Produtor.o \
+	${OBJECTDIR}/StringUtils.o \
 	${OBJECTDIR}/Tokenizer.o \
 	${OBJECTDIR}/Usuario.o \
 	${OBJECTDIR}/main.o
@@ -115,20 +116,25 @@ ${OBJECTDIR}/PlataformaDigital.o: PlataformaDigital.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PlataformaDigital.o PlataformaDigital.cpp
 
-${OBJECTDIR}/Poadcast.o: Poadcast.cpp
+${OBJECTDIR}/Podcast.o: Podcast.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Poadcast.o Poadcast.cpp
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Podcast.o Podcast.cpp
 
-${OBJECTDIR}/Poadcaster.o: Poadcaster.cpp
+${OBJECTDIR}/Podcaster.o: Podcaster.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Poadcaster.o Poadcaster.cpp
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Podcaster.o Podcaster.cpp
 
 ${OBJECTDIR}/Produtor.o: Produtor.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Produtor.o Produtor.cpp
+
+${OBJECTDIR}/StringUtils.o: StringUtils.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/StringUtils.o StringUtils.cpp
 
 ${OBJECTDIR}/Tokenizer.o: Tokenizer.cpp
 	${MKDIR} -p ${OBJECTDIR}

@@ -17,7 +17,7 @@ Podcast::Podcast(){
     
 }
     
-Podcast::Podcast(string nome, int codigo, Genero* gen, int qtdTemp) : Midia(nome, codigo, genero){
+Podcast::Podcast(string nome, int codigo, Genero* gen, int qtdTemp) : Midia(nome, codigo, gen){
     this->qtdTemporadas=qtdTemp;
 }
 
