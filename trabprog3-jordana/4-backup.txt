@@ -1,0 +1,33 @@
+Usuarios:
+codigo;nome
+1;Muriel Ailen
+2;Max Éowyn
+3;Reena Blejan
+4;Jouni Ferdo
+5;Edith Frank
+6;Libbie Dipika
+7;Shun Elkanah
+8;Matas Roxana
+9;Rasmus Takeshi
+10;Abacuc Mamadou
+11;Netuno Caitlin
+12;Constantin Buddha
+13;Ninoslav Selma
+14;Caelia Steinarr
+15;Baxter José Manuel
+16;Nélida Firdos
+17;Chikere Nikusha
+18;Kadek Cowhauler
+19;Ganzorig Gobind
+20;Tanu Roderick
+21;Eamon Cyneweard
+22;Moritz Anastasios
+23;Teobaldo Tadija
+24;Yuliana Wafula
+25;Klara Harry
+26;Young Kukulkan
+27;Patience Vasya
+28;Alexandros Berinhard
+29;Samuel Herberto
+Midias:
+nome;tipo;produtores;duração;gênero;temporada;codigo_do_album;data_de_publicação

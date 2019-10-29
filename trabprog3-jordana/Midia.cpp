@@ -1,3 +1,5 @@
+#include <vector>
+
 #include "Midia.hpp"
 
 int Midia::qtdprodutos = 0;
@@ -42,4 +44,8 @@ Midia::Genero Midia::getGenero(){
 
 Midia::Genero::~Genero(){
     
+}
+
+void Midia::addProdutor(Produtor* p){
+    this->produtores->push_back(p);
 }

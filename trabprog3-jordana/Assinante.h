@@ -13,7 +13,7 @@ public:
     void imprimeFavoritos(Midia* favorito);
     void inserirFavorito(Midia* favorito);
     void removerFavorito(Midia* favorito);
-    void imprimeNoArquivo(ofstream saida);
+    void imprimeNoArquivo(ofstream &saida);
     ~Assinante();
 private:
 

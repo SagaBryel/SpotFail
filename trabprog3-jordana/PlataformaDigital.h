@@ -49,7 +49,7 @@ public:
     void carregaArquivosFavoritos();
     virtual ~PlataformaDigital();
 private:
-
+    void gerarRelatoriosBackup();
 };
 
 #endif /* PLATAFORMADIGITAL_H */

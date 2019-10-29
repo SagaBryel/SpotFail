@@ -23,8 +23,10 @@ void Assinante::removerFavorito(Midia *favorito){
     
 }
 
-void Assinante::imprimeNoArquivo(ofstream saida){
-    
+void Assinante::imprimeNoArquivo(ofstream &saida){
+    saida << this->codigo;
+    saida.put(';');
+    saida << this->nome << endl;
 }
 
 Assinante::~Assinante(){

@@ -29,11 +29,11 @@ protected:
     int codigo;
     int duracao;
     int anoLancamento;
-    
+    vector<Produtor>* produtores;
     //Declaracao do atributo genero, uma classe interna
     Genero* genero;
-    //ssssss
     
+    void addProdutor(Produtor* p);
 public:
     static int qtdprodutos;
     

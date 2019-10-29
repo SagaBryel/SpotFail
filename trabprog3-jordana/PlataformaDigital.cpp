@@ -8,13 +8,15 @@ PlataformaDigital::PlataformaDigital() {
 PlataformaDigital::PlataformaDigital(string nome){
     this->nome=nome;
 }
+//String compara se comporta de maneira estranha. Pelomenos para o genero rock string compare deixa passar tb Sertaneijo
+
 void PlataformaDigital::imprimeProdutos(string genero){
     string midgen;
     vector<Midia>::iterator iteMid;
 
     for(iteMid = midias.begin(); iteMid < midias.end(); iteMid++){
         midgen = iteMid.base()->getGenero().getNome();
-        if(stringCompare(midgen, genero)){
+        if(!stringCompare(midgen, genero)){
             cout << iteMid.base()->getGenero().getNome() << endl;
         }
     }
@@ -54,6 +56,7 @@ void PlataformaDigital::carregaArquivoUsuarios(ifstream &entrada){
             Assinante *novo = new Assinante(tokens[2], codigo);
             assinantes.push_back(*novo);
         }
+        //Mudar para usar a função insere assinante
         else if (tokens[1] == "A" && !entrada.eof()){//preenchimento do vector
             Artista *novo2 = new Artista(tokens[2], codigo);
             produtores.push_back(*novo2);
@@ -114,8 +117,9 @@ void PlataformaDigital::carregaArquivosMidias(ifstream &entrada){
     string linha;
     vector<string> tokens;
     //vector auxiliar para tratar os casos da musicas com mais de um genero
-    vector<string> tokauxes;
-    
+    vector<string> vectgeneros;
+
+    int qtdprodutores;
     //consumir a primeira linha, que e apenas um cabecalho
     getline(entrada, linha);
     
@@ -133,15 +137,16 @@ void PlataformaDigital::carregaArquivosMidias(ifstream &entrada){
         vector<Midia::Genero>::iterator iteGenero;
         
         //Há musicas com dois generos, um tokenizer para pegar o primeiro
+        Tokenizer togen(tokens[5], ',');
+        vectgeneros = togen.remaining();
         for(iteGenero = generos.begin(); iteGenero < generos.end(); iteGenero++){
-            Tokenizer tokaux(tokens[5], ',');
-            tokauxes = tokaux.remaining();
-            if(iteGenero.base()->getSigla() == tokauxes[0]){
+            if(iteGenero.base()->getSigla() == vectgeneros[0]){
                 auxgen = iteGenero.base();
                 break;
             }
         }
         
+
         //campos comuns a musica e podcast
         auxcodigo = (int)parseDouble(tokens[0], LOCALE_PT_BR);
         auxDuracao = parseDouble(tokens[4],LOCALE_PT_BR);
@@ -156,6 +161,19 @@ void PlataformaDigital::carregaArquivosMidias(ifstream &entrada){
         if(tokens[2] == "P" && !entrada.eof()){
             Podcast *novop = new Podcast(tokens[1], auxcodigo, auxgen, auxano);
             midias.push_back(*novop);
+        }
+        vector<Produtor>::iterator iteProds;
+        Tokenizer tokprods(tokens[3]);
+        vectprods = tokprods.remaining();
+        qtdprodutores = vectprods.size();
+        while(qtdprodutores > 0){
+            for(iteProds = produtores.begin(); iteProds < produtores.end(); iteProds++){
+                if(iteProds.base()->getNome() == tokprods[qtdprodutores - 1]){
+                    
+                }
+                    
+            }
+            qtdprodutores--;
         }
     }
 //TESTES
@@ -174,7 +192,21 @@ void PlataformaDigital::exportarBiblioteca(){
 }
 
 void PlataformaDigital::gerarRelatorios(){
+    gerarRelatoriosBackup();
+}
+void PlataformaDigital::gerarRelatoriosBackup(){
+    ofstream backup;
+    backup.open("4-backup.txt");
     
+    backup << "Usuarios:" << endl << "codigo;nome" << endl;
+    
+    vector<Assinante>::iterator iteass;
+
+    for(iteass = assinantes.begin(); iteass < assinantes.end(); iteass++){
+        iteass.base()->imprimeNoArquivo(backup);
+    }
+    
+    backup << "Midias:" << endl << "nome;tipo;produtores;duração;gênero;temporada;codigo_do_album;data_de_publicação" << endl;
 }
 
 void PlataformaDigital::carregaArquivosFavoritos(){
@@ -184,3 +216,7 @@ void PlataformaDigital::carregaArquivosFavoritos(){
 PlataformaDigital::~PlataformaDigital() {
 }
 
+//Alguns acordos de normalização (gabriel-hiuri)
+//nomes de iteradores são da forma iteTipo (ite + Tipo)
+//espaçamentos entre igualdades e após ';' de fors
+//quebras de linhas separando seções de codigos

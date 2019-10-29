@@ -14,7 +14,7 @@ public:
     void imprimeProdutosDesenvolvidos();
     //vector </*Midia*/> getProdutosDesenvolvidos();
     virtual ~Produtor();
-//    void imprimeNoArquivo(ofstream saida);
+    void imprimeNoArquivo(ofstream &saida);
 private:
 
 };

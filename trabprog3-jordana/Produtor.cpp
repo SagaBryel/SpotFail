@@ -17,7 +17,7 @@ Produtor::~Produtor() {
 void Produtor::imprimeProdutosDesenvolvidos(){
      
 }
- 
-//void Produtor::imprimeNoArquivo(ofstream saida){
-//     
-//}
+
+void Produtor::imprimeNoArquivo(ofstream &saida){
+
+}

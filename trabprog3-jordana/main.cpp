@@ -20,6 +20,7 @@ int main(int argc, char** argv) {
     b->carregaArquivoGeneros(arqGenero);
     b->carregaArquivosMidias(arqMidias);
     b->imprimeProdutos("Rock");
+    b->gerarRelatorios();
     return 0;
 }
 
