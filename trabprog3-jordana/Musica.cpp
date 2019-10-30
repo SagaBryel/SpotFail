@@ -19,10 +19,21 @@ string Musica::getNome(){
     return this->nome;
 }
 void Musica::imprimeNoArquivo(ofstream &backup) {
-    cout << "AAAAAAAAAAAA";
+    backup << this->nome << ";M;";
+    vector<Produtor*>::iterator iteProd;
+    
+    for(iteProd = this->produtores.begin(); iteProd < this->produtores.end(); iteProd++){
+        backup << (*iteProd.base())->getCodigo();
+        if(iteProd < (this->produtores.end()-1)){
+            backup << ",";
+        }
+            
+    }
+    backup << endl;
+    
 }
 
-void imprimeProduto(){
+void Musica::imprimeProduto(){
     
 }
 

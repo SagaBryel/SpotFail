@@ -15,6 +15,7 @@ public:
     
     //Função de Podcast que dado um arquivo de saida (já aberto) imprime as informações de uma midia do tipo podcast    
     void imprimeNoArquivo(ofstream &backup);
+    //Função de Podcast
     void imprimeProduto();
     ~Podcast();
 private:

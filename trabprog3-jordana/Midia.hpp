@@ -32,11 +32,11 @@ protected:
     int codigo;
     int duracao;
     int anoLancamento;
-    vector<Produtor> produtores;
+    vector<Produtor*> produtores;
     //Declaracao do atributo genero, uma classe interna
     Genero* genero;
     
-    void addProdutores(Produtor p);
+    void addProdutores(Produtor *p);
 public:
     static int qtdprodutos;
     
@@ -47,7 +47,7 @@ public:
     //Retorna o codigo (int) de uma midia
     int getCodigo();
     //Função que recebe uma lista de produtores(em forma de string, separados)
-    void addListaProdutores(string ps);
+    void addListaProdutores(string ps, vector<Produtor*> prodsplataforma);
     
     
     virtual void imprimeProduto() = 0;

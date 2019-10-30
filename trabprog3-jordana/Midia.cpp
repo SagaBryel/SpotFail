@@ -49,23 +49,24 @@ int Midia::getCodigo(){
     return this->codigo;
 }
 
-void Midia::addProdutores(Produtor p){
+void Midia::addProdutores(Produtor *p){
     this->produtores.push_back(p);
 }
-void Midia::addListaProdutores(string ps){
+void Midia::addListaProdutores(string ps, vector<Produtor*> prodsplataforma){
     vector<string> tokens;
     int qtdprodutores;
     //Para verificar o caso quando há mais de um produtor em uma midia
-    vector<Produtor>::iterator iteProds;
+    vector<Produtor*>::iterator iteProds;
     Tokenizer tokprods(ps, ',');
     tokens = tokprods.remaining();
     //Define a quantidade de produtores que uma midia tem a fim de usar como indice (por isso o decressimo de 1)
-    qtdprodutores = tokprods.remaining().size() -1;
+    qtdprodutores = tokprods.remaining().size();
     while(qtdprodutores >= 0){
-        for(iteProds = produtores.begin(); iteProds < produtores.end(); iteProds++){
+        for(iteProds = prodsplataforma.begin(); iteProds < prodsplataforma.end(); iteProds++){
             //compara o codigo da produção em analize com os codigos dos produtores
-            if(iteProds.base()->getCodigo() == (int)parseDouble(tokens[qtdprodutores-1], LOCALE_PT_BR)){
+            if((*iteProds.base())->getCodigo() == (int)parseDouble(tokens[qtdprodutores], LOCALE_PT_BR)){
                 addProdutores(*iteProds.base());
+                break;
             }
         
         }

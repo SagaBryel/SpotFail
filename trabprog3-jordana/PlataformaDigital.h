@@ -26,11 +26,11 @@ protected:
     
     vector<Assinante> assinantes;
     //mudar podcasters e artistas para uma
-    vector<Produtor> produtores;
+    vector<Produtor*> produtores;
     
     vector<Midia::Genero> generos;
     
-    vector<Midia> midias;
+    vector<Midia*> midias;
     
     
 public:

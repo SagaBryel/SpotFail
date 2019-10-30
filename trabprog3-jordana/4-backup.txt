@@ -31,3 +31,103 @@ codigo;nome
 29;Samuel Herberto
 Midias:
 nome;tipo;produtores;duração;gênero;temporada;codigo_do_album;data_de_publicação
+Queen of California;M;50
+The Age of Worry;M;50
+Shadow Days;M;50
+Speak For Me;M;50
+Something Like Olivia;M;50
+Born and Raised;M;50
+Still Feel Like Your Man;M;50
+Emoji of a Wave;M;50
+Helpless;M;50
+Love on the Weekend;M;50
+Rosie;M;50
+Changing;M;50
+Moving On and Getting Over;M;50
+Born To Die;M;43
+Blue Jeans;M;43
+Dark Paradise;M;43
+Carmen;M;43
+Summertime Sadness;M;43
+Cruel World;M;43
+Ultraviolence;M;43
+Shades Of Cool;M;43
+Sad Girl;M;43
+Blood Sweat & Tears;M;51
+Begin;M;51
+Lie;M;51
+NerdCast 692 - Era uma vez um... Tarantino;P;31
+Speak English 19 - Connected Speech;P;31
+NerdCash 15 - Objetivos e consciência financeira;P;31
+NerdTech 43 - Profissão: Programador 4.0;P;31
+NerdCast 688 - A batalha dos Crossovers 8;P;31
+Speak English 18 - Armadilhas das traduções;P;31
+NerdCast 685 - MCU Fase 4;P;31
+NerdTech 42 - Tecnologias da corrida espacial;P;31
+Reinaldo Azevedo // POUCAS #43;P;39
+Damiani // POUCAS $42;P;39
+Luisa Mell  // POUCAS #41;P;39
+Wendel Bezerra // POUCAS #40;P;39
+Érico Borgo // POUCAS #39;P;39
+Gordox // POUCAS #38;P;39
+Mauricio Meirelles // POUCAS #37;P;39
+Uma nora pra cada dia;M;52
+Credo que delicia;M;52
+Facilita;M;52
+Agora é tudo meu;M;52
+Terremoto;M;52
+Reboladinha;M;52
+O bebê;M;52
+Cheio de Marra;M;53
+Tudo de Bom;M;53
+Foi bom;M;53
+Bandida;M;53
+Tocar sua Pele;M;53
+Minha Nega;M;53
+Casado, Namorando, Solteiro;M;54
+Ar-condicionado no 15;M;54
+Ressaca de Saudade;M;54
+Decreto Liberado;M;54
+Quem Bate Também Chora;M;54
+Ninguém é de Ferro;M;54
+Sonhei que tava me casando;M;54
+Se esconder Ela Não Chora;M;54
+Eu sei de Cor;M;55
+A Gente não se Aguenta;M;55
+Traição Não tem Perdão;M;55
+Nem Foi e Já voltou;M;55
+Amante não tem Lar;M;55
+Dia, Lugar e Hora;M;56
+Primeira Semana;M;56
+Eu, você, o Mar e Ela;M;56
+Estava Zero;M;56
+Hear Me Now;M;57
+All the Lies;M;57
+Favela;M;57
+Fuego;M;57
+Peace Of Mind;M;58
+Heaven;M;58
+SOS;M;58
+Bad Reputation;M;58
+Old Town Road - Remix;M;44
+Panini;M;44
+Rodeo;M;44
+Bring U Down;M;44
+C7osure;M;44
+Kick It;M;44
+Always Got Something to Say;M;61
+Going Home;M;61
+Pure Gold;M;61
+Pain;M;61
+#259 - Loucos por boyband (feat. Manu Gavassi);P;34
+#258 - Wanda Morning Show: Bolsinha da Rihanna;P;34
+#257 - Não Queira;P;34
+#253 - Luí­sa Sonza: diva sensata do pop;P;34
+#237 - A sexta-feira é Santa Mas eu Não;P;34
+#229 - Wanda Morning Show 2;P;34
+#216 - Papo Sobre Fama e Artistas Incríveis;P;34
+O Assunto #22: Como a morte da menina Ágatha reabriu...;P;41
+O Assunto #21: A emergência do clima - ainda dá tempo para salvar o planeta?;P;41
+O Assunto #20: As contradições do caso Flordelis e como a deputada passou...;P;41
+O Assunto #19: Dinheiro para campanhas eleitorais;P;41
+O Assunto #18: Existe risco de guerra após os ataques na Arábia Saudita?;P;41

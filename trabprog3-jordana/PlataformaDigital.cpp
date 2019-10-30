@@ -15,9 +15,10 @@ void PlataformaDigital::imprimeProdutos(string genero){
     vector<Midia*>::iterator iteMid;
 
     for(iteMid = midias.begin(); iteMid < midias.end(); iteMid++){
-        midgen = iteMid.base()->getGenero().getNome();
+        //
+        midgen = (*iteMid.base())->getGenero().getNome();
         if(!stringCompare(midgen, genero)){
-            cout << iteMid.base()->getGenero().getNome() << endl;
+            cout << (*iteMid.base())->getGenero().getNome() << endl;
         }
     }
 }
@@ -59,11 +60,11 @@ void PlataformaDigital::carregaArquivoUsuarios(ifstream &entrada){
         //Mudar para usar a função insere assinante
         else if (tokens[1] == "A" && !entrada.eof()){//preenchimento do vector
             Artista *novo2 = new Artista(tokens[2], codigo);
-            produtores.push_back(*novo2);
+            produtores.push_back(novo2);
         }
         else if(tokens[1]== "P"  && !entrada.eof()){//preenchimento do vector
             Podcaster *novo3 = new Podcaster(tokens[2], codigo);
-            produtores.push_back(*novo3);
+            produtores.push_back(novo3);
         }        
     }
     //TESTES 
@@ -153,14 +154,14 @@ void PlataformaDigital::carregaArquivosMidias(ifstream &entrada){
         //Ainda precisa ser verificado como tratar a informação album
         if(tokens[2] == "M" && !entrada.eof()){//preenchimento do vector
             Musica *novom = new Musica(tokens[1], auxcodigo, auxgen, auxDuracao, auxano);
-            novom->addListaProdutores(tokens[3]);
-            midias.push_back(*novom);
+            novom->addListaProdutores(tokens[3], this->produtores);
+            midias.push_back(novom);
         }
         
         if(tokens[2] == "P" && !entrada.eof()){
             Podcast *novop = new Podcast(tokens[1], auxcodigo, auxgen, auxano);
-            novop->addListaProdutores(tokens[3]);
-            midias.push_back(*novop);
+            novop->addListaProdutores(tokens[3], this->produtores);
+            midias.push_back(novop);
         }
 
     }
@@ -198,21 +199,15 @@ void PlataformaDigital::gerarRelatoriosBackup(){
     
     backup << "Midias:" << endl << "nome;tipo;produtores;duração;gênero;temporada;codigo_do_album;data_de_publicação" << endl;
     
-    vector<Midia>::iterator iteMidia;
+    vector<Midia*>::iterator iteMidia;
     for(iteMidia = midias.begin(); iteMidia < midias.end(); iteMidia++){
-        cout << typeid(iteMidia.base()).name() << endl;
-        cout << typeid(Musica).name();
-        if(typeid(iteMidia.base()).name() == typeid(Musica).name()){
-            m = dynamic_cast<Musica *> (iteMidia.base());
+        
+        m = dynamic_cast<Musica *> (*iteMidia.base());
+        if(m){
             m->imprimeNoArquivo(backup);
-            
-            
         }
-//        m = dynamic_cast<Musica *> (iteMidia.base());
-//        if(m){
-//            m->imprimeNoArquivo(backup);
-//        }
-        p = dynamic_cast<Podcast *> (iteMidia.base());
+        
+        p = dynamic_cast<Podcast *> (*iteMidia.base());
         if(p){
             p->imprimeNoArquivo(backup);
         }
