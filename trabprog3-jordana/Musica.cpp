@@ -18,9 +18,14 @@ void Musica::imprimeInfoProduto(){
 string Musica::getNome(){
     return this->nome;
 }
-void Musica::imprimeNoArquivo(ofstream backup) {
+void Musica::imprimeNoArquivo(ofstream &backup) {
     cout << "AAAAAAAAAAAA";
-} 
+}
+
+void imprimeProduto(){
+    
+}
+
 Musica::~Musica(){
     
 }

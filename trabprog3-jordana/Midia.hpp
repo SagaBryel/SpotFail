@@ -48,9 +48,15 @@ public:
     int getCodigo();
     //Função que recebe uma lista de produtores(em forma de string, separados)
     void addListaProdutores(string ps);
-//    virtual void imprimeQtdProdutos() = 0;
-//    virtual void imprimeProduto() = 0;
-    virtual void imprimeNoArquivo(ofstream backup);
+    
+    
+    virtual void imprimeProduto() = 0;
+    virtual void imprimeNoArquivo(ofstream &backup) = 0;
+
+    void imprimeQtdProdutos();
+
+    //void imprimeNoArquivo(ofstream &backup);
+    
     virtual ~Midia();
 private:
     

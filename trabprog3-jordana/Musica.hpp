@@ -11,8 +11,9 @@ public:
     ~Musica();
     
     
-    
-    void imprimeNoArquivo(ofstream backup);
+    //Função de Musica que dado um arquivo de saida (já aberto) imprime as informações de uma midia do tipo musica
+    void imprimeNoArquivo(ofstream &backup);
+    void imprimeProduto();
 private:
 
 };

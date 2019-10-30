@@ -2,7 +2,7 @@
 #define PLATAFORMADIGITAL_H
 #include<string>
 #include"Assinante.h"
-#include<vector>
+//#include<vector>
 #include"Produtor.hpp"
 #include"Midia.hpp"
 #include <iostream>
@@ -17,6 +17,7 @@
 #include "Musica.hpp"
 #include "Podcast.hpp"
 #include<iterator>
+#include <typeinfo>
 using namespace std;
 
 class PlataformaDigital {

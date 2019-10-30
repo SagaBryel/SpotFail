@@ -12,7 +12,7 @@ PlataformaDigital::PlataformaDigital(string nome){
 
 void PlataformaDigital::imprimeProdutos(string genero){
     string midgen;
-    vector<Midia>::iterator iteMid;
+    vector<Midia*>::iterator iteMid;
 
     for(iteMid = midias.begin(); iteMid < midias.end(); iteMid++){
         midgen = iteMid.base()->getGenero().getNome();
@@ -186,6 +186,9 @@ void PlataformaDigital::gerarRelatoriosBackup(){
     ofstream backup;
     backup.open("4-backup.txt");
     
+    Musica *m;
+    Podcast *p;
+    
     backup << "Usuarios:" << endl << "codigo;nome" << endl;
     
     vector<Assinante>::iterator iteAss;
@@ -197,12 +200,22 @@ void PlataformaDigital::gerarRelatoriosBackup(){
     
     vector<Midia>::iterator iteMidia;
     for(iteMidia = midias.begin(); iteMidia < midias.end(); iteMidia++){
-        Musica *m = dynamic_cast<Musica *> (iteMidia.base());
-        if(m){
+        cout << typeid(iteMidia.base()).name() << endl;
+        cout << typeid(Musica).name();
+        if(typeid(iteMidia.base()).name() == typeid(Musica).name()){
+            m = dynamic_cast<Musica *> (iteMidia.base());
+            m->imprimeNoArquivo(backup);
+            
             
         }
-        
-        
+//        m = dynamic_cast<Musica *> (iteMidia.base());
+//        if(m){
+//            m->imprimeNoArquivo(backup);
+//        }
+        p = dynamic_cast<Podcast *> (iteMidia.base());
+        if(p){
+            p->imprimeNoArquivo(backup);
+        }
     }
     
 }
