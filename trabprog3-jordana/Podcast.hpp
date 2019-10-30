@@ -13,6 +13,8 @@ public:
     void imprimeInfoProduto();
     string getNome();
     
+    void imprimeNoArquivo(ofstream backup);
+    
     ~Podcast();
 private:
 

@@ -22,6 +22,10 @@ string Podcaster::getNome(){
     return this->nome;
 }
 
+
+
+
+
 Podcaster::~Podcaster(){
 }
 

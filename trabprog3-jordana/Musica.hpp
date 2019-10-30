@@ -9,6 +9,10 @@ public:
     string getNome();
     void imprimeInfoProduto();
     ~Musica();
+    
+    
+    
+    void imprimeNoArquivo(ofstream backup);
 private:
 
 };

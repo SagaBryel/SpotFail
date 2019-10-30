@@ -118,8 +118,6 @@ void PlataformaDigital::carregaArquivosMidias(ifstream &entrada){
     vector<string> tokens;
     //vector auxiliar para tratar os casos da musicas com mais de um genero
     vector<string> vectgeneros;
-
-    int qtdprodutores;
     //consumir a primeira linha, que e apenas um cabecalho
     getline(entrada, linha);
     
@@ -155,26 +153,16 @@ void PlataformaDigital::carregaArquivosMidias(ifstream &entrada){
         //Ainda precisa ser verificado como tratar a informação album
         if(tokens[2] == "M" && !entrada.eof()){//preenchimento do vector
             Musica *novom = new Musica(tokens[1], auxcodigo, auxgen, auxDuracao, auxano);
+            novom->addListaProdutores(tokens[3]);
             midias.push_back(*novom);
         }
         
         if(tokens[2] == "P" && !entrada.eof()){
             Podcast *novop = new Podcast(tokens[1], auxcodigo, auxgen, auxano);
+            novop->addListaProdutores(tokens[3]);
             midias.push_back(*novop);
         }
-        vector<Produtor>::iterator iteProds;
-        Tokenizer tokprods(tokens[3]);
-        vectprods = tokprods.remaining();
-        qtdprodutores = vectprods.size();
-        while(qtdprodutores > 0){
-            for(iteProds = produtores.begin(); iteProds < produtores.end(); iteProds++){
-                if(iteProds.base()->getNome() == tokprods[qtdprodutores - 1]){
-                    
-                }
-                    
-            }
-            qtdprodutores--;
-        }
+
     }
 //TESTES
 //    vector<Musica>::iterator iteMusica;
@@ -200,13 +188,23 @@ void PlataformaDigital::gerarRelatoriosBackup(){
     
     backup << "Usuarios:" << endl << "codigo;nome" << endl;
     
-    vector<Assinante>::iterator iteass;
-
-    for(iteass = assinantes.begin(); iteass < assinantes.end(); iteass++){
-        iteass.base()->imprimeNoArquivo(backup);
+    vector<Assinante>::iterator iteAss;
+    for(iteAss = assinantes.begin(); iteAss < assinantes.end(); iteAss++){
+        iteAss.base()->imprimeNoArquivo(backup);
     }
     
     backup << "Midias:" << endl << "nome;tipo;produtores;duração;gênero;temporada;codigo_do_album;data_de_publicação" << endl;
+    
+    vector<Midia>::iterator iteMidia;
+    for(iteMidia = midias.begin(); iteMidia < midias.end(); iteMidia++){
+        Musica *m = dynamic_cast<Musica *> (iteMidia.base());
+        if(m){
+            
+        }
+        
+        
+    }
+    
 }
 
 void PlataformaDigital::carregaArquivosFavoritos(){

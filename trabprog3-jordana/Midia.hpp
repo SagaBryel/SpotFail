@@ -2,7 +2,10 @@
 #define MIDIA_HPP
 
 //#include "PlataformaDigital.h"
-
+#include "Produtor.hpp"
+#include"Tokenizer.hpp"
+#include "NumPunctPTBR.hpp"
+#include "NumberUtils.hpp"
 #include<string>
 #include<iostream>
 
@@ -29,11 +32,11 @@ protected:
     int codigo;
     int duracao;
     int anoLancamento;
-    vector<Produtor>* produtores;
+    vector<Produtor> produtores;
     //Declaracao do atributo genero, uma classe interna
     Genero* genero;
     
-    void addProdutor(Produtor* p);
+    void addProdutores(Produtor p);
 public:
     static int qtdprodutos;
     
@@ -41,10 +44,13 @@ public:
     Midia(string nome, int codigo, Genero* genero);
     string getNome();
     Genero getGenero();
-    
+    //Retorna o codigo (int) de uma midia
+    int getCodigo();
+    //Função que recebe uma lista de produtores(em forma de string, separados)
+    void addListaProdutores(string ps);
 //    virtual void imprimeQtdProdutos() = 0;
 //    virtual void imprimeProduto() = 0;
-//    virtual void imprimeNoArquivo() = 0;
+    virtual void imprimeNoArquivo(ofstream backup);
     virtual ~Midia();
 private:
     

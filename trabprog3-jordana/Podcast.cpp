@@ -29,6 +29,11 @@ void Podcast::imprimeInfoProduto(){
     
 }
 
+void Podcast::imprimeNoArquivo(ofstream backup){
+    cout << "BBBBBBBBBBBBBBBB";
+}
+    
+
 Podcast::~Podcast(){
     
 }

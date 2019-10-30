@@ -22,7 +22,7 @@ class Podcaster : public Produtor {
 public:
     Podcaster(string nome, int codigo);
     string getNome();
-//    void imprimeNoArquivo(ofstream saida);
+    //void imprimeNoArquivo(ofstream &backup);
     ~Podcaster();
 private:
 
