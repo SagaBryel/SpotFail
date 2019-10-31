@@ -7,6 +7,7 @@
 #include "NumPunctPTBR.hpp"
 #include "NumberUtils.hpp"
 #include<string>
+#include<vector>
 #include<iostream>
 
 using namespace std;
@@ -43,6 +44,8 @@ public:
     Midia();
     Midia(string nome, int codigo, Genero* genero);
     string getNome();
+    void setQtdProdutos(vector<Midia*> midias);
+    int getQtdProdutos();
     Genero getGenero();
     //Retorna o codigo (int) de uma midia
     int getCodigo();

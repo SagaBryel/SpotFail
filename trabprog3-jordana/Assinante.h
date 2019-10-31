@@ -4,9 +4,11 @@
 #include<fstream>
 #include"Midia.hpp"
 #include<string>
+#include<vector>
 using  namespace std;
 
 class Assinante : public Usuario {
+    vector<Midia*> favoritos;
 public:
     Assinante();
     Assinante(string nome, int codigo);

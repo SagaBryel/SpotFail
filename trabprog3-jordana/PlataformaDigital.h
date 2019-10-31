@@ -16,6 +16,8 @@
 #include "Podcaster.hpp"
 #include "Musica.hpp"
 #include "Podcast.hpp"
+#include <cstdio>
+#include <cstdlib>
 #include<iterator>
 #include <typeinfo>
 using namespace std;
@@ -47,7 +49,7 @@ public:
     void carregaArquivosMidias(ifstream &entrada);
     void exportarBiblioteca();
     void gerarRelatorios();
-    void carregaArquivosFavoritos();
+    void carregaArquivosFavoritos(ifstream &entrada);
     virtual ~PlataformaDigital();
 private:
     void gerarRelatoriosBackup();

@@ -49,6 +49,14 @@ int Midia::getCodigo(){
     return this->codigo;
 }
 
+void Midia::setQtdProdutos(vector<Midia*> midias){
+    this->qtdprodutos=midias.size();
+}
+
+int Midia::getQtdProdutos(){
+    return this->qtdprodutos;
+}
+
 void Midia::addProdutores(Produtor *p){
     this->produtores.push_back(p);
 }

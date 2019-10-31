@@ -163,8 +163,9 @@ void PlataformaDigital::carregaArquivosMidias(ifstream &entrada){
             novop->addListaProdutores(tokens[3], this->produtores);
             midias.push_back(novop);
         }
-
+        
     }
+    //midias.begin().base()->setQtdProdutos(midias);
 //TESTES
 //    vector<Musica>::iterator iteMusica;
 //    for(iteMusica = musicas.begin(); iteMusica < musicas.end(); iteMusica++){
@@ -215,8 +216,46 @@ void PlataformaDigital::gerarRelatoriosBackup(){
     
 }
 
-void PlataformaDigital::carregaArquivosFavoritos(){
+void PlataformaDigital::carregaArquivosFavoritos(ifstream &entrada){
+    string linha;
+    vector<string> tokens;
+    vector<string> tokens2;
     
+    vector<Assinante*>::iterator iteAss;
+    vector<Midia*>::iterator iteMid;
+    //consumir a primeira linha, que e apenas um cabecalho
+    getline(entrada, linha);
+    
+    int ass=0;//contador de assinantes
+    int qtdMidia=midias.size();
+    
+    while(!entrada.eof() && ass<assinantes.size()){
+        getline(entrada, linha);
+        Tokenizer tok(linha, ';');
+        tokens = tok.remaining();  
+        Tokenizer tokFav(tokens[1],',');
+        tokens2 =tokFav.remaining();
+        int i=0;//contator para andar no arquivo, tokens
+        
+        int favoritas=0;
+        while(favoritas<qtdMidia){
+            if(midias[favoritas]->getCodigo()==(int)parseDouble(tokens2[i],LOCALE_PT_BR)){
+                assinantes[ass].inserirFavorito(midias[favoritas]);
+                i++;
+                favoritas=0;
+                
+            }
+            if(i==tokens2.size()){
+                    break;
+            }
+            favoritas++;
+        }
+        ass++;
+        if(ass==assinantes.size()){
+            break;
+        }
+            
+    }
 }
     
 PlataformaDigital::~PlataformaDigital() {
