@@ -26,8 +26,8 @@ class PlataformaDigital {
 protected:
     string nome;
     
-    vector<Assinante> assinantes;
-    //mudar podcasters e artistas para uma
+    vector<Assinante*> assinantes;
+    
     vector<Produtor*> produtores;
     
     vector<Midia::Genero> generos;
@@ -52,7 +52,10 @@ public:
     void carregaArquivosFavoritos(ifstream &entrada);
     virtual ~PlataformaDigital();
 private:
-    void gerarRelatoriosBackup();
+    //função auxiliar de "gerarRelatorios"
+    void gerarHellatorioBackup();
+    void gerarHellatorioProdutores();
+    void gerarHellatorioFavoritos();
 };
 
 #endif /* PLATAFORMADIGITAL_H */

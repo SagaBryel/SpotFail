@@ -7,6 +7,7 @@ using namespace std;
 
 class Album {
 protected:
+    int codigo;
     string nome;
     float duracao;
     int anoLancamento;
@@ -14,6 +15,7 @@ protected:
 public:
     Album();
     Album(string nome, float duracao, int ano, int qtd);
+    void addMusica();
     void imprimeNoArquivo(ofstream saida);
     ~Album();
 private:

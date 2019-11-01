@@ -5,11 +5,11 @@
 using namespace std;
 
 class Podcast : public Midia {
-protected:
+private:
     int qtdTemporadas;
 public:
     Podcast();
-    Podcast(string nome, int codigo, Genero* gen, int qtdTemp);
+    Podcast(string nome, int codigo, Genero* gen, float duracao, int ano, int qtdTemp);
     void imprimeInfoProduto();
     string getNome();
     

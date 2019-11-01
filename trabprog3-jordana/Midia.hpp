@@ -31,7 +31,7 @@ public:
 protected:
     string nome;
     int codigo;
-    int duracao;
+    float duracao;
     int anoLancamento;
     vector<Produtor*> produtores;
     //Declaracao do atributo genero, uma classe interna
@@ -43,12 +43,15 @@ public:
     
     Midia();
     Midia(string nome, int codigo, Genero* genero);
+    
+    //Função de Midia, retorna o nome da midia.
     string getNome();
     void setQtdProdutos(vector<Midia*> midias);
     int getQtdProdutos();
     Genero getGenero();
     //Retorna o codigo (int) de uma midia
     int getCodigo();
+    
     //Função que recebe uma lista de produtores(em forma de string, separados)
     void addListaProdutores(string ps, vector<Produtor*> prodsplataforma);
     

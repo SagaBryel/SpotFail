@@ -2,6 +2,21 @@
 
 using namespace std;
 
+//por desespero
+static bool comparaProd(Produtor* a, Produtor* b){
+    if(a->getNome().compare(b->getNome()) < 0)
+        return true;
+    return false;
+}
+//Por alguma razão (que desconheco) há um //r ao fim de de strings q representam nome
+static string tiraBarraBarraR(string s){
+    int tam = s.length();
+    string aux = s.substr(0, s.length()-1);
+  
+
+    return aux;
+}
+
 PlataformaDigital::PlataformaDigital() {
 }
 
@@ -42,6 +57,7 @@ void PlataformaDigital::imprimeNoArquivo(ofstream saida){
 
 void PlataformaDigital::carregaArquivoUsuarios(ifstream &entrada){
     string linha;
+    string nome;
     int codigo;
     vector<string> tokens;
     //consumir a primeira linha, que e apenas um cabecalho
@@ -50,39 +66,25 @@ void PlataformaDigital::carregaArquivoUsuarios(ifstream &entrada){
         getline(entrada, linha);
         Tokenizer tok(linha, ';');
         tokens = tok.remaining();
-
+        nome = tiraBarraBarraR(tokens[2]);//retira o //r do final da string
         codigo = (int)parseDouble(tokens[0], LOCALE_PT_BR);      
         
         if(tokens[1] == "U" && !entrada.eof()){//preenchimento do vector
-            Assinante *novo = new Assinante(tokens[2], codigo);
-            assinantes.push_back(*novo);
+            Assinante *novo = new Assinante(nome, codigo);
+            assinantes.push_back(novo);
         }
         //Mudar para usar a função insere assinante
         else if (tokens[1] == "A" && !entrada.eof()){//preenchimento do vector
-            Artista *novo2 = new Artista(tokens[2], codigo);
+            Artista *novo2 = new Artista(nome, codigo);
             produtores.push_back(novo2);
         }
         else if(tokens[1]== "P"  && !entrada.eof()){//preenchimento do vector
-            Podcaster *novo3 = new Podcaster(tokens[2], codigo);
+            Podcaster *novo3 = new Podcaster(nome, codigo);
             produtores.push_back(novo3);
         }        
     }
-    //TESTES 
-    
-    /*vector<Assinante>::iterator iteAss;
-    for(iteAss = assinantes.begin(); iteAss < assinantes.end(); iteAss++){
-        cout << iteAss.base()->getCodigo() << ";" << iteAss.base()->getNome() << endl;
-    }
-    
-    vector<Poadcaster>::iterator itePod;
-    for(itePod = poadcasters.begin(); itePod < poadcasters.end(); itePod++){
-        cout << itePod.base()->getCodigo() << ";" << itePod.base()->getNome() << endl;
-    }
-    
-    vector<Artista>::iterator iteArt;
-    for(iteArt = artistas.begin(); iteArt < artistas.end(); iteArt++){
-        cout << iteArt.base()->getCodigo() << ";" << iteArt.base()->getNome() << endl;
-    }*/ 
+    //Ordena a lista de produtores
+    sort(produtores.begin(), produtores.end(), comparaProd);
 }
 
 void PlataformaDigital::carregaArquivoGeneros(ifstream &entrada){
@@ -121,10 +123,12 @@ void PlataformaDigital::carregaArquivosMidias(ifstream &entrada){
     vector<string> vectgeneros;
     //consumir a primeira linha, que e apenas um cabecalho
     getline(entrada, linha);
-    
+    int temporada;
     int auxcodigo;
     int auxano;
+    int codalbum;
     double auxDuracao;
+    
 
     
     while(!entrada.eof()){
@@ -150,31 +154,26 @@ void PlataformaDigital::carregaArquivosMidias(ifstream &entrada){
         auxcodigo = (int)parseDouble(tokens[0], LOCALE_PT_BR);
         auxDuracao = parseDouble(tokens[4],LOCALE_PT_BR);
         auxano = (int)parseDouble(tokens[9],LOCALE_PT_BR);
+
         
         //Ainda precisa ser verificado como tratar a informação album
         if(tokens[2] == "M" && !entrada.eof()){//preenchimento do vector
-            Musica *novom = new Musica(tokens[1], auxcodigo, auxgen, auxDuracao, auxano);
+            codalbum = (int)parseDouble(tokens[8], LOCALE_PT_BR);
+            //ainda nao implemaentando album como objeto da classe album
+            Musica *novom = new Musica(tokens[1], auxcodigo, auxgen, auxDuracao, auxano, tokens[7], codalbum);
             novom->addListaProdutores(tokens[3], this->produtores);
             midias.push_back(novom);
         }
         
-        if(tokens[2] == "P" && !entrada.eof()){
-            Podcast *novop = new Podcast(tokens[1], auxcodigo, auxgen, auxano);
+        else if(tokens[2] == "P" && !entrada.eof()){
+            temporada = (int)parseDouble(tokens[6], LOCALE_PT_BR);
+            Podcast *novop = new Podcast(tokens[1], auxcodigo, auxgen, auxDuracao, auxano, temporada);
             novop->addListaProdutores(tokens[3], this->produtores);
             midias.push_back(novop);
         }
         
     }
-    //midias.begin().base()->setQtdProdutos(midias);
-//TESTES
-//    vector<Musica>::iterator iteMusica;
-//    for(iteMusica = musicas.begin(); iteMusica < musicas.end(); iteMusica++){
-//        cout << iteMusica.base()->getNome() << endl;
-//    }
-//    vector<Podcast>::iterator itePod;
-//    for(itePod = podcasts.begin(); itePod < podcasts.end(); itePod++){
-//        cout << itePod.base()->getNome() << endl;
-//    } 
+
 }
 
 void PlataformaDigital::exportarBiblioteca(){
@@ -182,9 +181,26 @@ void PlataformaDigital::exportarBiblioteca(){
 }
 
 void PlataformaDigital::gerarRelatorios(){
-    gerarRelatoriosBackup();
+    gerarHellatorioBackup();
+    gerarHellatorioProdutores();
 }
-void PlataformaDigital::gerarRelatoriosBackup(){
+
+void PlataformaDigital::gerarHellatorioProdutores(){
+    ofstream relaprod;
+    relaprod.open("2-produtores.csv");
+    vector<Produtor*>::iterator iteProd;
+    for(iteProd = produtores.begin(); iteProd < produtores.end(); iteProd++){
+        (*iteProd.base())->ordenaMidia();//ordena a lista de midias antes de imprimir
+        (*iteProd.base())->imprimeNoArquivo(relaprod);
+    }
+}
+
+void PlataformaDigital::gerarHellatorioFavoritos(){
+    
+}
+
+
+void PlataformaDigital::gerarHellatorioBackup(){
     ofstream backup;
     backup.open("4-backup.txt");
     
@@ -193,11 +209,11 @@ void PlataformaDigital::gerarRelatoriosBackup(){
     
     backup << "Usuarios:" << endl << "codigo;nome" << endl;
     
-    vector<Assinante>::iterator iteAss;
+    vector<Assinante*>::iterator iteAss;
     for(iteAss = assinantes.begin(); iteAss < assinantes.end(); iteAss++){
-        iteAss.base()->imprimeNoArquivo(backup);
+        (*iteAss.base())->imprimeNoArquivo(backup);
     }
-    
+    backup << endl;
     backup << "Midias:" << endl << "nome;tipo;produtores;duração;gênero;temporada;codigo_do_album;data_de_publicação" << endl;
     
     vector<Midia*>::iterator iteMidia;
@@ -240,10 +256,10 @@ void PlataformaDigital::carregaArquivosFavoritos(ifstream &entrada){
         int favoritas=0;
         while(favoritas<qtdMidia){
             if(midias[favoritas]->getCodigo()==(int)parseDouble(tokens2[i],LOCALE_PT_BR)){
-                assinantes[ass].inserirFavorito(midias[favoritas]);
+                assinantes[ass]->inserirFavorito(midias[favoritas]);
                 i++;
                 favoritas=0;
-                
+
             }
             if(i==tokens2.size()){
                     break;

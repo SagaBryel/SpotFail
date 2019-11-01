@@ -17,9 +17,16 @@ Album::Album() {
 }
 
 Album::Album(string nome, float duracao, int ano, int qtd){
-    
+    this->nome = nome;
+    this->duracao = duracao;
+    this->anoLancamento;
+    this->qtdMusicas = 1;
 }
     
+void Album::addMusica(){
+    this->qtdMusicas++;
+}
+
 void Album::imprimeNoArquivo(ofstream saida){
     
 }

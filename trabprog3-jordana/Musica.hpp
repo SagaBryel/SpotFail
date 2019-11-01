@@ -3,9 +3,12 @@
 #include"Midia.hpp"
 
 class Musica : public Midia {
+private:
+    string album;
+    int codalbum;
 public:
     Musica();
-    Musica(string nome,int codigo, Genero* gen, float duracao, int ano);
+    Musica(string nome,int codigo, Genero* gen, float duracao, int ano, string album, int codalbum);
     string getNome();
     void imprimeInfoProduto();
     ~Musica();
@@ -15,8 +18,7 @@ public:
     void imprimeNoArquivo(ofstream &backup);
     //Função de Musica
     void imprimeProduto();
-private:
-
+    
 };
 
 #endif /* MUSICA_HPP */

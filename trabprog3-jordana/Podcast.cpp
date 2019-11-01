@@ -17,8 +17,10 @@ Podcast::Podcast(){
     
 }
     
-Podcast::Podcast(string nome, int codigo, Genero* gen, int qtdTemp) : Midia(nome, codigo, gen){
-    this->qtdTemporadas=qtdTemp;
+Podcast::Podcast(string nome,int codigo, Genero* gen, float duracao, int ano, int qtdtemp) : Midia(nome, codigo, gen){
+    this->qtdTemporadas=qtdtemp;
+    this->anoLancamento=ano;
+    this->duracao=duracao;
 }
 
 string Podcast::getNome(){
@@ -37,9 +39,11 @@ void Podcast::imprimeNoArquivo(ofstream &backup){
         backup << (*iteProd.base())->getCodigo();
         if(iteProd < (this->produtores.end()-1)){
             backup << ",";
-        }
-            
+        }       
     }
+    backup << ';' << this->duracao << ';' << this->genero->getSigla() << ';' << this->qtdTemporadas;
+    //Como um podcast nao tem album, nem codigo de album
+    backup << ";;;" << this->anoLancamento;
     backup << endl;
 }
 void Podcast::imprimeProduto(){
